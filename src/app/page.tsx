@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -28,15 +29,19 @@ export default function Home() {
         className="text-center text-white max-w-md"
       >
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
           className="mb-8"
         >
-          <div className="w-24 h-24 mx-auto mb-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-            <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-            </svg>
+          <div className="flex items-center justify-center mb-6">
+            <Image
+              src="/logo-smartdecision.svg"
+              alt="SmartDecision"
+              width={260}
+              height={80}
+              priority
+            />
           </div>
         </motion.div>
 
@@ -46,7 +51,7 @@ export default function Home() {
           transition={{ delay: 0.4 }}
           className="text-4xl font-bold mb-4"
         >
-          Smart health
+          SmartDecision
         </motion.h1>
 
         <motion.p

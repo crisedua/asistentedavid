@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import SiteHeader from '@/components/SiteHeader'
 
 export const metadata: Metadata = {
   title: 'Smart health - Tu bienestar personalizado',
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="font-sans antialiased">
         <div className="min-h-screen">
+          <SiteHeader />
           {children}
         </div>
       </body>
