@@ -45,14 +45,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-4xl font-bold mb-4"
-        >
-          SmartDecision
-        </motion.h1>
+        {/* Título removido para evitar duplicar el logo */}
 
         <motion.p
           initial={{ opacity: 0 }}
