@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -28,22 +27,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="text-center text-white max-w-md"
       >
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-8"
-        >
-          <div className="flex items-center justify-center mb-6">
-            <Image
-              src="/logo-smartdecision.jpg"
-              alt="SmartDecision"
-              width={260}
-              height={80}
-              priority
-            />
-          </div>
-        </motion.div>
+        {/* Logo removido de la home (se mantiene en el header global) */}
 
         {/* Título removido para evitar duplicar el logo */}
 
