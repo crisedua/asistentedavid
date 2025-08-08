@@ -36,7 +36,7 @@ export default function Home() {
         >
           <div className="flex items-center justify-center mb-6">
             <Image
-              src="/logo-smartdecision.svg"
+              src="/logo-smartdecision.jpg"
               alt="SmartDecision"
               width={260}
               height={80}

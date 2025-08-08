@@ -9,7 +9,7 @@ export default function SiteHeader() {
       <div className="max-w-md mx-auto px-4 py-2 flex items-center justify-center">
         <Link href="/" className="inline-flex items-center">
           <Image
-            src="/logo-smartdecision.svg"
+            src="/logo-smartdecision.jpg"
             alt="SmartDecision"
             width={180}
             height={56}
