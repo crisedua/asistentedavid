@@ -92,7 +92,7 @@ export default function Dashboard() {
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold text-primary-600">{currentScore}</div>
-              <p className="text-xs text-gray-500">Capital de Salud</p>
+              <p className="text-xs text-gray-500">Smart health</p>
             </div>
           </div>
         </div>

@@ -78,7 +78,7 @@ export default function Register() {
               Crear cuenta
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Únete a Capital de Salud y comienza tu transformación
+              Únete a Smart health y comienza tu transformación
             </p>
           </div>
 

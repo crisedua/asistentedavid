@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Capital de Salud - Tu bienestar personalizado',
+  title: 'Smart health - Tu bienestar personalizado',
   description: 'Te ayudamos a crear hábitos simples con impacto real en tu salud',
   viewport: 'width=device-width, initial-scale=1',
 }

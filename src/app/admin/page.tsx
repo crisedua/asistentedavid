@@ -6,7 +6,7 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, BarChart, Bar, PieC
 
 const kpiData = [
   { title: 'Usuarios activos (30 días)', value: '2,847', change: '+12%', positive: true },
-  { title: 'Capital de salud promedio', value: '542', change: '+8 pts', positive: true },
+  { title: 'Puntaje de salud promedio', value: '542', change: '+8 pts', positive: true },
   { title: 'Tasa participación semanal', value: '73%', change: '-2%', positive: false },
   { title: 'Rachas >7 días activas', value: '1,203', change: '+18%', positive: true }
 ]
@@ -111,7 +111,7 @@ export default function AdminDashboard() {
                 className="card"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Evolución Capital de Salud Promedio
+                  Evolución del puntaje de salud promedio
                 </h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">

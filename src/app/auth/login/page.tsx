@@ -49,7 +49,7 @@ export default function Login() {
             Iniciar sesión
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Accede a tu cuenta de Capital de Salud
+            Accede a tu cuenta de Smart health
           </p>
         </div>
       </motion.div>

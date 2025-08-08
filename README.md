@@ -1,4 +1,4 @@
-# Capital de Salud - App Web Responsive
+# Smart health - App Web Responsive
 
 Una aplicación web moderna para el seguimiento y mejora del capital de salud personal, desarrollada con Next.js, TypeScript y Tailwind CSS.
 

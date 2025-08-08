@@ -46,7 +46,7 @@ export default function Home() {
           transition={{ delay: 0.4 }}
           className="text-4xl font-bold mb-4"
         >
-          Capital de Salud
+          Smart health
         </motion.h1>
 
         <motion.p
