@@ -55,6 +55,7 @@ export default function SurveyResults() {
 
   const strengths = getStrengths(score)
   const opportunities = getOpportunities(score)
+  const percentileText = '45% superior'
 
   const getScoreColor = (score: number) => {
     if (score >= 850) return 'text-purple-600'
@@ -172,9 +173,20 @@ export default function SurveyResults() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="bg-white rounded-2xl shadow-lg p-6 mb-8"
         >
-          <p className="text-gray-700 text-center leading-relaxed">
-            Este puntaje es tu punto de partida. Te proponemos un plan simple y progresivo.
-          </p>
+          <div className="space-y-3 text-center">
+            <p className="text-lg font-semibold text-gray-900">
+              Tu Capital de Salud: {displayScore} puntos
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Este puntaje refleja tu nivel actual de bienestar físico, mental y de hábitos saludables.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Según nuestros registros, te encuentras en el {percentileText} de personas de tu mismo grupo de edad y género.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              El objetivo ahora es mantener y aumentar este puntaje adoptando hábitos que fortalezcan tus áreas con menor desempeño.
+            </p>
+          </div>
         </motion.div>
 
         {/* CTA */}

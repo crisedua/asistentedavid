@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 const weekDays = [
   { day: 'Lun', date: '15', habits: [
@@ -50,8 +51,23 @@ const weekDays = [
 ]
 
 export default function Plan() {
-  const [activeTab, setActiveTab] = useState<'habits' | 'challenges' | 'schedule'>('habits')
+  const searchParams = useSearchParams()
+  const selectedLevel = searchParams.get('level') as 'light' | 'medium' | 'intense' | null
+  const [activeTab, setActiveTab] = useState<'intro' | 'habits' | 'challenges' | 'schedule'>(selectedLevel ? 'intro' : 'habits')
   const [showEditModal, setShowEditModal] = useState(false)
+
+  const effortLabel = useMemo(() => {
+    switch (selectedLevel) {
+      case 'light':
+        return 'Ligero'
+      case 'medium':
+        return 'Medio'
+      case 'intense':
+        return 'Intenso'
+      default:
+        return null
+    }
+  }, [selectedLevel])
 
   const getHabitIcon = (type: string) => {
     switch (type) {
@@ -96,6 +112,7 @@ export default function Plan() {
         {/* Tabs */}
         <div className="flex space-x-1 mb-6 bg-gray-100 p-1 rounded-xl">
           {[
+            ...(effortLabel ? ([{ key: 'intro', label: 'Introducción' }] as const) : []),
             { key: 'habits', label: 'Hábitos' },
             { key: 'challenges', label: 'Retos' },
             { key: 'schedule', label: 'Agenda' }
@@ -113,6 +130,42 @@ export default function Plan() {
             </button>
           ))}
         </div>
+
+        {/* Intro Tab (shown after selecting plan level) */}
+        {activeTab === 'intro' && effortLabel && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="space-y-4"
+          >
+            <div className="card">
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Tu plan está listo</h2>
+              <p className="text-gray-700 mb-4">
+                Con el nivel de esfuerzo que seleccionaste ({effortLabel}), hemos diseñado una propuesta equilibrada en tres áreas clave:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700">
+                <li>Actividad física para fortalecer tu cuerpo.</li>
+                <li>Alimentación para nutrirlo de forma saludable.</li>
+                <li>Sueño y descanso para recuperar energía y mejorar tu bienestar mental.</li>
+              </ul>
+            </div>
+
+            <div className="card">
+              <p className="text-gray-700">
+                Estas son las rutinas que te recomendamos adoptar para alcanzar los resultados que buscas. Empieza hoy y observa cómo tu puntaje de Capital de Salud mejora semana a semana.
+              </p>
+              <div className="mt-4">
+                <button
+                  className="w-full btn-primary"
+                  onClick={() => setActiveTab('habits')}
+                >
+                  Ver rutinas
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Habits Tab */}
         {activeTab === 'habits' && (

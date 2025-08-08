@@ -73,8 +73,8 @@ export default function PlanSelection() {
     // Simulate plan setup
     await new Promise(resolve => setTimeout(resolve, 1500))
     
-    // Redirect to dashboard
-    router.push('/dashboard')
+    // Redirect to plan with selected level
+    router.push(`/plan?level=${planId}`)
   }
 
   const getColorClasses = (color: string, isSelected: boolean) => {
